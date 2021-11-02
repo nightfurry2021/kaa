@@ -13,7 +13,7 @@ RUN kubectl version --client
 RUN sudo apt-get update -y
 RUN sudo apt-get install -y conntrack
 RUN curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
-RUN sudo cp minikube /usr/local/bin && rm minikube
+RUN sudo cp minikube /usr/local/bin
 
 # kind
 RUN curl -Lo kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64
@@ -21,4 +21,4 @@ RUN chmod +x kind
 RUN sudo mv kind /usr/local/bin
 
 USER root
-RUN ["minikube start"]
+RUN ["./minikube start"]
