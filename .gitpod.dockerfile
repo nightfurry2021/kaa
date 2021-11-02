@@ -21,4 +21,4 @@ RUN chmod +x kind
 RUN sudo mv kind /usr/local/bin
 
 USER root
-CMD ["minikube start"]
+RUN ["minikube start"]
