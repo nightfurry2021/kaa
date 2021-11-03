@@ -19,6 +19,7 @@ RUN sudo cp minikube /usr/local/bin
 RUN curl -Lo kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64
 RUN chmod +x kind
 RUN sudo mv kind /usr/local/bin
+RUN sudo minikube start
 
 USER root
-RUN ["./minikube start"]
+
